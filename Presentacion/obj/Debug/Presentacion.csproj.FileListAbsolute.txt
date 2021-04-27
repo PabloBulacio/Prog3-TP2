@@ -1,0 +1,10 @@
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.Form1.resources
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.pdb

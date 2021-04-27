@@ -52,8 +52,47 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Agregar.Designer.cs">
+      <DependentUpon>Form_Agregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Detalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Detalles.Designer.cs">
+      <DependentUpon>Form_Detalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Eliminar.Designer.cs">
+      <DependentUpon>Form_Eliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Modificar.Designer.cs">
+      <DependentUpon>Form_Modificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Agregar.resx">
+      <DependentUpon>Form_Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Detalles.resx">
+      <DependentUpon>Form_Detalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Eliminar.resx">
+      <DependentUpon>Form_Eliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Modificar.resx">
+      <DependentUpon>Form_Modificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
