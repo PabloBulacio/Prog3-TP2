@@ -8,3 +8,12 @@ C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.c
 C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.Form_Agregar.resources
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.Form_Detalles.resources
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.Form_Eliminar.resources
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.Form_Modificar.resources
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\bin\Debug\Dominio.dll
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\bin\Debug\Negocio.dll
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\bin\Debug\Dominio.pdb
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\bin\Debug\Negocio.pdb
+C:\Users\Usuario\source\repos\Solution_TP2\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete

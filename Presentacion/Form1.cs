@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using Dominio;
+using Negocio;
 
 namespace Presentacion
 {
     public partial class Form1 : Form
     {
+        private List<Articulos> listaArticulos;
+        
         public Form1()
         {
             InitializeComponent();
@@ -40,5 +45,32 @@ namespace Presentacion
             Form_Detalles elemento = new Form_Detalles();
             elemento.ShowDialog();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cargarGrilla();
+        }
+
+        private void cargarGrilla()
+        {
+           ArticulosNegocio articulosNegocio = new ArticulosNegocio();
+
+            try
+            {
+                listaArticulos = articulosNegocio.Listar();
+                dgvArticulos.DataSource = listaArticulos;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
+    
 }

@@ -36,9 +36,9 @@ namespace Presentacion
             this.btn_buscar = new System.Windows.Forms.Button();
             this.lbl_Filtro = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pictureBox_Form1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Form1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,13 +112,14 @@ namespace Presentacion
             this.textBox1.Size = new System.Drawing.Size(294, 20);
             this.textBox1.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvArticulos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 51);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(542, 337);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.Location = new System.Drawing.Point(15, 51);
+            this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.Size = new System.Drawing.Size(542, 337);
+            this.dgvArticulos.TabIndex = 7;
+            this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // pictureBox_Form1
             // 
@@ -134,7 +135,7 @@ namespace Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox_Form1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbl_Filtro);
             this.Controls.Add(this.btn_buscar);
@@ -144,7 +145,8 @@ namespace Presentacion
             this.Controls.Add(this.btn_Agregar);
             this.Name = "Form1";
             this.Text = "Gestión de Artículos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Form1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,7 +162,7 @@ namespace Presentacion
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Label lbl_Filtro;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.PictureBox pictureBox_Form1;
     }
 }
