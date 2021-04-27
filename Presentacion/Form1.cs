@@ -59,6 +59,12 @@ namespace Presentacion
             {
                 listaArticulos = articulosNegocio.Listar();
                 dgvArticulos.DataSource = listaArticulos;
+               
+                
+                dgvArticulos.Columns["Marca"].Visible = false;
+                dgvArticulos.Columns["Categoria"].Visible = false;
+                dgvArticulos.Columns["ImagenUrl"].Visible = false;
+
 
             }
             catch (Exception ex)
@@ -69,8 +75,22 @@ namespace Presentacion
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
+
+        private void dgvArticulos_MouseClick(object sender, MouseEventArgs e)
+        {
+            Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            RecargarImg(seleccionado.ImagenUrl);
+        }
+
+        private void RecargarImg(string img)
+        {
+            ///VER PORQUE NO CARGA UNA IMAGEN DE INTERNET
+            ///pictureBox_Articulo.Load(img);
+        }
+
+       
     }
     
 }

@@ -37,9 +37,9 @@ namespace Presentacion
             this.lbl_Filtro = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.pictureBox_Form1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Articulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Form1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Articulo)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Agregar
@@ -120,21 +120,22 @@ namespace Presentacion
             this.dgvArticulos.Size = new System.Drawing.Size(542, 337);
             this.dgvArticulos.TabIndex = 7;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvArticulos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvArticulos_MouseClick);
             // 
-            // pictureBox_Form1
+            // pictureBox_Articulo
             // 
-            this.pictureBox_Form1.Location = new System.Drawing.Point(564, 149);
-            this.pictureBox_Form1.Name = "pictureBox_Form1";
-            this.pictureBox_Form1.Size = new System.Drawing.Size(224, 147);
-            this.pictureBox_Form1.TabIndex = 8;
-            this.pictureBox_Form1.TabStop = false;
+            this.pictureBox_Articulo.Location = new System.Drawing.Point(564, 149);
+            this.pictureBox_Articulo.Name = "pictureBox_Articulo";
+            this.pictureBox_Articulo.Size = new System.Drawing.Size(224, 147);
+            this.pictureBox_Articulo.TabIndex = 8;
+            this.pictureBox_Articulo.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox_Form1);
+            this.Controls.Add(this.pictureBox_Articulo);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbl_Filtro);
@@ -147,7 +148,7 @@ namespace Presentacion
             this.Text = "Gestión de Artículos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Form1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Articulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,7 +164,7 @@ namespace Presentacion
         private System.Windows.Forms.Label lbl_Filtro;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dgvArticulos;
-        private System.Windows.Forms.PictureBox pictureBox_Form1;
+        private System.Windows.Forms.PictureBox pictureBox_Articulo;
     }
 }
 

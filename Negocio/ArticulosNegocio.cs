@@ -18,7 +18,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta(" select Codigo, Nombre, IdMarca, Precio from ARTICULOS");
+                datos.setearConsulta("select Codigo, Nombre, M.Descripcion as Marca, C.Descripcion as Categoria, Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdCategoria=C.Id and A.IdMarca=M.Id");
                 datos.ejecutarLectura();
 
               
@@ -27,7 +27,8 @@ namespace Negocio
                     Articulos aux = new Articulos();
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.IdMarca = (int)datos.Lector["IdMarca"];
+                    aux.Descripcion = (string)datos.Lector["Marca"];
+                    aux.ImagenUrl = (string)datos.Lector["Categoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
 
                     lista.Add(aux);
