@@ -15,7 +15,6 @@ namespace Negocio
             List<Articulos> lista = new List<Articulos>();
             AccesoDatos datos = new AccesoDatos();
 
-
             try
             {
                 datos.setearConsulta("select Codigo, Nombre, M.Descripcion as Marca, C.Descripcion as Categoria, Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdCategoria=C.Id and A.IdMarca=M.Id");
@@ -45,6 +44,71 @@ namespace Negocio
             finally
             {
                 datos.cerrarConexion();
+            }
+        }
+
+        public void agregar(Articulos nuevoArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string codigo = nuevoArticulo.Codigo;
+                string nombre = nuevoArticulo.Nombre;
+                string descripcion = nuevoArticulo.Descripcion;
+                int idMarca = Convert.ToInt32(getIdMarca(nuevoArticulo.Marca));
+                int idCategoria = Convert.ToInt32(getIdCategoria(nuevoArticulo.Categoria));
+                string urlImagen = nuevoArticulo.ImagenUrl;
+                decimal precio = nuevoArticulo.Precio;
+
+                string values = "values('" + codigo+ "', '" + nombre + "', '" + descripcion + "', " + idMarca + ", "
+                                    + idCategoria + ", '" + urlImagen + "', " + precio + ")";
+                string consulta = "insert into articulos (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) " + values;
+                datos.setearConsulta(consulta);
+                datos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        
+        private int getIdMarca(Marcas marca)
+        {
+            switch(marca.Descripcion)
+            {
+                case "Samsung":
+                    return 1;
+                case "Apple":
+                    return 2;
+                case "Sony":
+                    return 3;
+                case "Huawei":
+                    return 4;
+                case "Motorola":
+                    return 5;
+                default:
+                    return 1;
+            }
+        }
+
+        private int getIdCategoria(Categorias categoria)
+        {
+            switch (categoria.Descripcion)
+            {
+                case "Celulares":
+                    return 1;
+                case "Televisores":
+                    return 2;
+                case "Media":
+                    return 3;
+                case "Audio":
+                    return 4;
+                default:
+                    return 1;
             }
         }
     }
