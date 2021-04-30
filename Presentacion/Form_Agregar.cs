@@ -48,10 +48,10 @@ namespace Presentacion
                     txtPrecioArticulo.Text = Articulo.Precio.ToString();
                     txtUrlImagen.Text = Articulo.ImagenUrl;
                     cboMarca.DataSource = marcaNegocio.listar();
-                    cboMarca.SelectedValue = Articulo.Marca.Id;
+                    cboMarca.SelectedValue = Articulo.IdMarca;
                     //cboMarca.DisplayMember = "Descripcion";
                     cboCategoria.DataSource = categoriaNegocio.listar();
-                    cboCategoria.SelectedValue = Articulo.Categoria.Id; 
+                    cboCategoria.SelectedValue = Articulo.IdCategoria; 
                     //cboCategoria.DisplayMember = "Descripcion";
                 }
                 else

@@ -29,8 +29,8 @@ namespace Negocio
                     aux.Descripcion = (string)datos.Lector["Marca"];
                     aux.ImagenUrl = (string)datos.Lector["Categoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.Marca.Id = (int)datos.Lector["IdMarca"];
-                    aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                    aux.IdMarca= (int)datos.Lector["IdMarca"];
+                    aux.IdCategoria = (int)datos.Lector["IdCategoria"];
 
                     lista.Add(aux);
 
