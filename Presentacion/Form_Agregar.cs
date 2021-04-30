@@ -14,9 +14,18 @@ namespace Presentacion
 {
     public partial class Form_Agregar : Form
     {
+        private Articulos Articulo = null;
         public Form_Agregar()
         {
             InitializeComponent();
+        }
+
+        public Form_Agregar(Articulos newArticulo)
+        {
+            string titleText = "Modificar Articulo";
+            InitializeComponent();
+            this.Articulo = newArticulo;
+            Text = titleText;
         }
 
         private void btn_Cancelar_Agregar_Click(object sender, EventArgs e)
@@ -30,8 +39,30 @@ namespace Presentacion
             CategoriasNegocio categoriaNegocio = new CategoriasNegocio();
             try
             {
-                cboMarca.DataSource = marcaNegocio.listar();
-                cboCategoria.DataSource = categoriaNegocio.listar();
+                if(Articulo != null)
+                {
+                    
+                    txtCodArticulo.Text = Articulo.Codigo;
+                    txtNombreArticulo.Text = Articulo.Nombre;
+                    txtDescArticulo.Text = Articulo.Descripcion;
+                    txtPrecioArticulo.Text = Articulo.Precio.ToString();
+                    txtUrlImagen.Text = Articulo.ImagenUrl;
+                    cboMarca.DataSource = marcaNegocio.listar();
+                    cboMarca.SelectedValue = Articulo.Marca.Id;
+                    //cboMarca.DisplayMember = "Descripcion";
+                    cboCategoria.DataSource = categoriaNegocio.listar();
+                    cboCategoria.SelectedValue = Articulo.Categoria.Id; 
+                    //cboCategoria.DisplayMember = "Descripcion";
+                }
+                else
+                {
+                    cboMarca.DataSource = marcaNegocio.listar();
+                    cboMarca.ValueMember = "Id";
+                    cboMarca.DisplayMember = "Descripcion";
+                    cboCategoria.DataSource = categoriaNegocio.listar();
+                    cboCategoria.ValueMember = "Id";
+                    cboCategoria.DisplayMember = "Descripcion";
+                }
             }
             catch (Exception ex)
             {

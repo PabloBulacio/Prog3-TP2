@@ -26,12 +26,16 @@ namespace Presentacion
         {
             Form_Agregar elemento = new Form_Agregar();
             elemento.ShowDialog();
+            cargarGrilla();
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            Form_Modificar elemento = new Form_Modificar();
-            elemento.ShowDialog();
+            Articulos selectedItem = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+
+            Form_Agregar ModifyingForm = new Form_Agregar(selectedItem);//PAT [2020-29-04] - Cambio para usar la ventana Form_Agregar en lugar de Form_Modificar ya que los dos forms son similares y podriamos usar el mismo form para las dos acciones
+            ModifyingForm.ShowDialog();
+            cargarGrilla();
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
@@ -86,7 +90,7 @@ namespace Presentacion
 
         private void RecargarImg(string img)
         {
-            ///VER PORQUE NO CARGA UNA IMAGEN DE INTERNET
+            ///VER PORQUE NO CARGA UNA IMAGEN DE INTERNET   
             ///pictureBox_Articulo.Load(img);
         }
 
