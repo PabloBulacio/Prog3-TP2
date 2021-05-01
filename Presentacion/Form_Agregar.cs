@@ -15,6 +15,7 @@ namespace Presentacion
     public partial class Form_Agregar : Form
     {
         private Articulos Articulo = null;
+
         public Form_Agregar()
         {
             InitializeComponent();
@@ -39,37 +40,31 @@ namespace Presentacion
             CategoriasNegocio categoriaNegocio = new CategoriasNegocio();
             try
             {
-                if(Articulo != null)
+                cboMarca.DataSource = marcaNegocio.listar();
+                cboMarca.ValueMember = "Id";
+                cboMarca.DisplayMember = "Descripcion";
+
+                cboCategoria.DataSource = categoriaNegocio.listar();
+                cboCategoria.ValueMember = "Id";
+                cboCategoria.DisplayMember = "Descripcion";
+
+                if (Articulo != null)
                 {
-                    
                     txtCodArticulo.Text = Articulo.Codigo;
                     txtNombreArticulo.Text = Articulo.Nombre;
                     txtDescArticulo.Text = Articulo.Descripcion;
                     txtPrecioArticulo.Text = Articulo.Precio.ToString();
                     txtUrlImagen.Text = Articulo.ImagenUrl;
                     cboMarca.DataSource = marcaNegocio.listar();
-                    cboMarca.SelectedValue = Articulo.IdMarca;
-                    //cboMarca.DisplayMember = "Descripcion";
+                    cboMarca.SelectedValue = Articulo.Marca.Id;
                     cboCategoria.DataSource = categoriaNegocio.listar();
-                    cboCategoria.SelectedValue = Articulo.IdCategoria; 
-                    //cboCategoria.DisplayMember = "Descripcion";
-                }
-                else
-                {
-                    cboMarca.DataSource = marcaNegocio.listar();
-                    cboMarca.ValueMember = "Id";
-                    cboMarca.DisplayMember = "Descripcion";
-                    cboCategoria.DataSource = categoriaNegocio.listar();
-                    cboCategoria.ValueMember = "Id";
-                    cboCategoria.DisplayMember = "Descripcion";
+                    cboCategoria.SelectedValue = Articulo.Categoria.Id; 
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-
-            
         }
 
         private void Form_Agregar_FormClosing(object sender, FormClosingEventArgs e)
@@ -82,26 +77,49 @@ namespace Presentacion
 
         private void btn_Aceptar_Agregar_Click(object sender, EventArgs e)
         {
-            Articulos nuevoArticulo = new Articulos();
+            //Articulos nuevoArticulo = new Articulos();
             ArticulosNegocio nuevoArtNegocio = new ArticulosNegocio();
             try
             {
-                nuevoArticulo.Codigo = txtCodArticulo.Text;
-                nuevoArticulo.Nombre = txtNombreArticulo.Text;
-                nuevoArticulo.Descripcion = txtDescArticulo.Text;
-                nuevoArticulo.Precio = Convert.ToDecimal(txtPrecioArticulo.Text);
-                nuevoArticulo.Marca = (Marcas)cboMarca.SelectedItem;
-                nuevoArticulo.Categoria = (Categorias)cboCategoria.SelectedItem;
-                nuevoArticulo.ImagenUrl = txtUrlImagen.Text;
+                if (Articulo == null)
+                    Articulo = new Articulos();
 
-                nuevoArtNegocio.agregar(nuevoArticulo);
-                MessageBox.Show("agregado sin problema");
+                Articulo.Codigo = txtCodArticulo.Text;
+                Articulo.Nombre = txtNombreArticulo.Text;
+                Articulo.Descripcion = txtDescArticulo.Text;
+                Articulo.Precio = Convert.ToDecimal(txtPrecioArticulo.Text);
+                Articulo.Marca = (Marcas)cboMarca.SelectedItem;
+                Articulo.Categoria = (Categorias)cboCategoria.SelectedItem;
+                Articulo.ImagenUrl = txtUrlImagen.Text;
+
+
+                if (Articulo.IdArticulo == 0)
+                {
+                    nuevoArtNegocio.agregar(Articulo);
+                    MessageBox.Show("agregado sin problema");
+                }
+                else
+                {
+                    nuevoArtNegocio.Modificar(Articulo);
+                    MessageBox.Show("Modificado sin problema");
+                }
+
                 Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ReloadImg(string img)
+        {
+            pictureBox_Agregar.Load(img);
+        }
+
+        private void txtUrlImagen_TextChanged(object sender, EventArgs e)
+        {
+            ReloadImg(txtUrlImagen.Text);
         }
     }
 }

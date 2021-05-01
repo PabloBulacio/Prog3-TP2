@@ -158,6 +158,7 @@ namespace Presentacion
             this.pictureBox_Agregar.Location = new System.Drawing.Point(357, 83);
             this.pictureBox_Agregar.Name = "pictureBox_Agregar";
             this.pictureBox_Agregar.Size = new System.Drawing.Size(311, 271);
+            this.pictureBox_Agregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_Agregar.TabIndex = 12;
             this.pictureBox_Agregar.TabStop = false;
             // 
@@ -199,6 +200,7 @@ namespace Presentacion
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(121, 20);
             this.txtUrlImagen.TabIndex = 16;
+            this.txtUrlImagen.TextChanged += new System.EventHandler(this.txtUrlImagen_TextChanged);
             // 
             // Form_Agregar
             // 

@@ -127,6 +127,7 @@ namespace Presentacion
             this.pictureBox_Articulo.Location = new System.Drawing.Point(564, 149);
             this.pictureBox_Articulo.Name = "pictureBox_Articulo";
             this.pictureBox_Articulo.Size = new System.Drawing.Size(224, 147);
+            this.pictureBox_Articulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_Articulo.TabIndex = 8;
             this.pictureBox_Articulo.TabStop = false;
             // 

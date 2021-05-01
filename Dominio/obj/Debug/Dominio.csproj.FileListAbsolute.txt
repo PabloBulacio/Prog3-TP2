@@ -10,3 +10,9 @@ C:\Users\Usuario\source\repos\Prog3-TP2\Dominio\obj\Debug\Dominio.csprojAssembly
 C:\Users\Usuario\source\repos\Prog3-TP2\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\source\repos\Prog3-TP2\Dominio\obj\Debug\Dominio.dll
 C:\Users\Usuario\source\repos\Prog3-TP2\Dominio\obj\Debug\Dominio.pdb
+C:\Users\pabl0\source\repos\PabloBulacio\Prog3-TP2\Dominio\bin\Debug\Dominio.dll
+C:\Users\pabl0\source\repos\PabloBulacio\Prog3-TP2\Dominio\bin\Debug\Dominio.pdb
+C:\Users\pabl0\source\repos\PabloBulacio\Prog3-TP2\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\pabl0\source\repos\PabloBulacio\Prog3-TP2\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\pabl0\source\repos\PabloBulacio\Prog3-TP2\Dominio\obj\Debug\Dominio.dll
+C:\Users\pabl0\source\repos\PabloBulacio\Prog3-TP2\Dominio\obj\Debug\Dominio.pdb

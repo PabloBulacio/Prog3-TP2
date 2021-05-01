@@ -17,20 +17,24 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("select Codigo, Nombre, M.Descripcion as Marca, C.Descripcion as Categoria, Precio, M.Id as IdMarca, C.Id as IdCategoria from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdCategoria=C.Id and A.IdMarca=M.Id");
+                datos.setearConsulta("select A.Id, Codigo, Nombre, A.Descripcion as DescripcionArticulo, M.Descripcion as MarcaDescripcion, C.Descripcion as CategoriaDescripcion, Precio, M.Id as IdMarca, C.Id as IdCategoria, ImagenUrl from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdCategoria=C.Id and A.IdMarca=M.Id");
                 datos.ejecutarLectura();
 
               
                 while (datos.Lector.Read())
                 {
                     Articulos aux = new Articulos();
+                    aux.IdArticulo = (int)datos.Lector["Id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Descripcion = (string)datos.Lector["Marca"];
-                    aux.ImagenUrl = (string)datos.Lector["Categoria"];
+                    aux.Descripcion = (string)datos.Lector["DescripcionArticulo"];
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.IdMarca= (int)datos.Lector["IdMarca"];
-                    aux.IdCategoria = (int)datos.Lector["IdCategoria"];
+
+                    aux.Marca = new Marcas((string)datos.Lector["MarcaDescripcion"]);
+                    aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                    aux.Categoria = new Categorias(datos.Lector["CategoriaDescripcion"].ToString());
+                    aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
 
                     lista.Add(aux);
 
@@ -57,8 +61,8 @@ namespace Negocio
                 string codigo = nuevoArticulo.Codigo;
                 string nombre = nuevoArticulo.Nombre;
                 string descripcion = nuevoArticulo.Descripcion;
-                int idMarca = getIdMarca(nuevoArticulo.Marca);
-                int idCategoria = getIdCategoria(nuevoArticulo.Categoria);
+                Marcas idMarca = nuevoArticulo.Marca;
+                Categorias idCategoria = nuevoArticulo.Categoria;
                 string urlImagen = nuevoArticulo.ImagenUrl;
                 decimal precio = nuevoArticulo.Precio;
 
@@ -77,40 +81,32 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
-        
-        private int getIdMarca(Marcas marca)
-        {
-            switch(marca.Descripcion)
-            {
-                case "Samsung":
-                    return 1;
-                case "Apple":
-                    return 2;
-                case "Sony":
-                    return 3;
-                case "Huawei":
-                    return 4;
-                case "Motorola":
-                    return 5;
-                default:
-                    return 1;
-            }
-        }
 
-        private int getIdCategoria(Categorias categoria)
+        public void Modificar(Articulos ArticuloAModificar)
         {
-            switch (categoria.Descripcion)
+            AccesoDatos datos = new AccesoDatos();
+            try
             {
-                case "Celulares":
-                    return 1;
-                case "Televisores":
-                    return 2;
-                case "Media":
-                    return 3;
-                case "Audio":
-                    return 4;
-                default:
-                    return 1;
+                datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, ImagenUrl = @imagenUrl, Precio = @precio where Id = @id");
+                datos.setearParametro("@codigo", ArticuloAModificar.Codigo);
+                datos.setearParametro("@nombre", ArticuloAModificar.Nombre);
+                datos.setearParametro("@descripcion", ArticuloAModificar.Descripcion);
+                datos.setearParametro("@idMarca", ArticuloAModificar.Marca.Id);
+                datos.setearParametro("@idCategoria", ArticuloAModificar.Categoria.Id);
+                datos.setearParametro("@imagenUrl", ArticuloAModificar.ImagenUrl);
+                datos.setearParametro("@precio", ArticuloAModificar.Precio);
+                datos.setearParametro("@id", ArticuloAModificar.IdArticulo);
+
+                datos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
     }

@@ -63,18 +63,23 @@ namespace Presentacion
             {
                 listaArticulos = articulosNegocio.Listar();
                 dgvArticulos.DataSource = listaArticulos;
-               
-                
-                dgvArticulos.Columns["Marca"].Visible = false;
-                dgvArticulos.Columns["Categoria"].Visible = false;
-                dgvArticulos.Columns["ImagenUrl"].Visible = false;
 
 
+                //dgvArticulos.Columns["Marca"].Visible = false;
+                //dgvArticulos.Columns["Categoria"].Visible = false;
+                //dgvArticulos.Columns["ImagenUrl"].Visible = false;
+
+                ReloadImg(listaArticulos[0].ImagenUrl);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ReloadImg (string img)
+        {
+            pictureBox_Articulo.Load(img);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -85,15 +90,8 @@ namespace Presentacion
         private void dgvArticulos_MouseClick(object sender, MouseEventArgs e)
         {
             Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
-            RecargarImg(seleccionado.ImagenUrl);
+            ReloadImg(seleccionado.ImagenUrl);
         }
-
-        private void RecargarImg(string img)
-        {
-            ///VER PORQUE NO CARGA UNA IMAGEN DE INTERNET   
-            ///pictureBox_Articulo.Load(img);
-        }
-
        
     }
     
