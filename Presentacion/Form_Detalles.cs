@@ -16,5 +16,27 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form_Detalles_Load(object sender, EventArgs e)
+        {
+            ///String detalles;
+
+            ///detalles = "Nombre: " + txt_Nombre.Text + "\r\n";
+            ///detalles += "Ocupacion: " + (String)(checkBox_Programador.Checked ? "Programador" : "No es Programador") + "\r\n";
+            ///detalles += "Sexo: " + (String)(radioButton_Hombre.Checked ? "Hombre" : "Mujer") + "\r\n";
+
+            //Vuelco la salida al TextBox Salida.
+            ///txt_Detalles.Text = detalles;
+        }
+
+        private void textBox_Detalles_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace Presentacion
             cargarGrilla();
         }
 
-        private void btn_Eliminar_Click(object sender, EventArgs e) { }
+        
 
         private void btn_Detalles_Click(object sender, EventArgs e)
         {

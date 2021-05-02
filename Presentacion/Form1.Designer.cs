@@ -31,7 +31,6 @@ namespace Presentacion
         {
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.btn_Modificar = new System.Windows.Forms.Button();
-            this.btn_Opciones = new System.Windows.Forms.Button();
             this.btn_Detalles = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.lbl_Filtro = new System.Windows.Forms.Label();
@@ -64,18 +63,6 @@ namespace Presentacion
             this.btn_Modificar.Text = "Modificar";
             this.btn_Modificar.UseVisualStyleBackColor = true;
             this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
-            // 
-            // btn_Opciones
-            // 
-            this.btn_Opciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Opciones.Location = new System.Drawing.Point(695, 405);
-            this.btn_Opciones.Name = "btn_Opciones";
-            this.btn_Opciones.Size = new System.Drawing.Size(93, 33);
-            this.btn_Opciones.TabIndex = 2;
-            this.btn_Opciones.Text = "Opciones";
-            this.btn_Opciones.UseVisualStyleBackColor = true;
-            this.btn_Opciones.Click += new System.EventHandler(this.btn_Eliminar_Click);
-            this.btn_Opciones.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_Eliminar_MouseClick);
             // 
             // btn_Detalles
             // 
@@ -158,7 +145,6 @@ namespace Presentacion
             this.Controls.Add(this.lbl_Filtro);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.btn_Detalles);
-            this.Controls.Add(this.btn_Opciones);
             this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.btn_Agregar);
             this.Name = "Form1";
@@ -176,7 +162,6 @@ namespace Presentacion
 
         private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.Button btn_Modificar;
-        private System.Windows.Forms.Button btn_Opciones;
         private System.Windows.Forms.Button btn_Detalles;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Label lbl_Filtro;
