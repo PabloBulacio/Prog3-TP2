@@ -10,7 +10,8 @@ namespace Negocio
 {
     public class ArticulosNegocio
     {
-       public List <Articulos> Listar()
+        private AccesoDatos datos;
+        public List <Articulos> Listar()
         {
             List<Articulos> lista = new List<Articulos>();
             AccesoDatos datos = new AccesoDatos();
@@ -107,6 +108,25 @@ namespace Negocio
             finally
             {
                 datos.cerrarConexion();
+            }
+        }
+
+        public void eliminar(int id)
+        {
+            datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Delete From ARTICULOS Where Id = " + id);
+                datos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
             }
         }
     }

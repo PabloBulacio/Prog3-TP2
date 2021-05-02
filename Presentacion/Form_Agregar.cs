@@ -69,10 +69,10 @@ namespace Presentacion
 
         private void Form_Agregar_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("De verad querés salir? Perderás los datos", "Saliendo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
-                return;
+            ///if (MessageBox.Show("De verad querés salir? Perderás los datos", "Saliendo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                ///return;
 
-            Dispose();
+            ///Dispose();
         }
 
         private void btn_Aceptar_Agregar_Click(object sender, EventArgs e)

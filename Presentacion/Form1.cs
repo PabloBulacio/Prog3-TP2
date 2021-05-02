@@ -38,11 +38,7 @@ namespace Presentacion
             cargarGrilla();
         }
 
-        private void btn_Eliminar_Click(object sender, EventArgs e)
-        {
-            Form_Eliminar elemento = new Form_Eliminar();
-            elemento.ShowDialog();
-        }
+        private void btn_Eliminar_Click(object sender, EventArgs e) { }
 
         private void btn_Detalles_Click(object sender, EventArgs e)
         {
@@ -54,6 +50,10 @@ namespace Presentacion
         {
             cargarGrilla();
         }
+        private void ReloadImg(string img)
+        {
+            pictureBox_Articulo.Load(img);
+        }
 
         private void cargarGrilla()
         {
@@ -63,11 +63,8 @@ namespace Presentacion
             {
                 listaArticulos = articulosNegocio.Listar();
                 dgvArticulos.DataSource = listaArticulos;
+                ocultarColumnas();
 
-
-                //dgvArticulos.Columns["Marca"].Visible = false;
-                //dgvArticulos.Columns["Categoria"].Visible = false;
-                //dgvArticulos.Columns["ImagenUrl"].Visible = false;
 
                 ReloadImg(listaArticulos[0].ImagenUrl);
             }
@@ -77,9 +74,16 @@ namespace Presentacion
             }
         }
 
-        private void ReloadImg (string img)
+      
+
+        private void ocultarColumnas()
         {
-            pictureBox_Articulo.Load(img);
+
+            dgvArticulos.Columns["Marca"].Visible = false;
+            dgvArticulos.Columns["Categoria"].Visible = false;
+            dgvArticulos.Columns["ImagenUrl"].Visible = false;
+            dgvArticulos.Columns["Descripcion"].Visible = false;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -92,7 +96,58 @@ namespace Presentacion
             Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
             ReloadImg(seleccionado.ImagenUrl);
         }
-       
+
+        private void btn_Eliminar_MouseClick(object sender, MouseEventArgs e)
+        {
+          
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            busqueda();
+        }
+
+        private void text_Filtro_KeyUp(object sender, KeyEventArgs e)
+        {
+            busqueda();
+        }
+        
+        private void busqueda()
+        {
+
+            List<Articulos> listaFiltrada;
+            if (text_Filtro.Text != "")
+            {
+                listaFiltrada = listaArticulos.FindAll(buscado => buscado.Nombre.ToUpper().Contains(text_Filtro.Text.ToUpper()) || buscado.Marca.Descripcion.ToUpper().Contains(text_Filtro.Text.ToUpper()));
+                dgvArticulos.DataSource = null;
+                dgvArticulos.DataSource = listaFiltrada;
+            }
+            else
+            {
+                dgvArticulos.DataSource = null;
+                dgvArticulos.DataSource = listaArticulos;
+            }
+
+            ocultarColumnas();
+        }
+
+        private void btn_Eliminar_Click_1(object sender, EventArgs e)
+        {
+            Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            ArticulosNegocio articuloNegocio = new ArticulosNegocio();
+            try
+            {
+                if (MessageBox.Show("Estás seguro de eliminarlo?", "Confirme la Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    articuloNegocio.eliminar(seleccionado.IdArticulo);
+                    cargarGrilla();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
     
 }

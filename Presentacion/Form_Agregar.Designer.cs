@@ -225,6 +225,7 @@ namespace Presentacion
             this.Controls.Add(this.txtCodArticulo);
             this.Controls.Add(this.lbl_CodArt);
             this.Name = "Form_Agregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar un Artículo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Agregar_FormClosing);
             this.Load += new System.EventHandler(this.Form_Agregar_Load);
