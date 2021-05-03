@@ -69,15 +69,18 @@ namespace Presentacion
 
         private void Form_Agregar_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ///if (MessageBox.Show("De verad querés salir? Perderás los datos", "Saliendo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
-                ///return;
-
-            ///Dispose();
+            if (MessageBox.Show("De verdad querés salir? Perderás los datos", "Saliendo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                return;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
         private void btn_Aceptar_Agregar_Click(object sender, EventArgs e)
         {
-            //Articulos nuevoArticulo = new Articulos();
             ArticulosNegocio nuevoArtNegocio = new ArticulosNegocio();
             try
             {
@@ -114,7 +117,14 @@ namespace Presentacion
 
         private void ReloadImg(string img)
         {
-            pictureBox_Agregar.Load(img);
+            try
+            {
+                pictureBox_Agregar.Load(img);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void txtUrlImagen_TextChanged(object sender, EventArgs e)

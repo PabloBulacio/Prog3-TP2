@@ -67,8 +67,8 @@ namespace Negocio
                 string urlImagen = nuevoArticulo.ImagenUrl;
                 decimal precio = nuevoArticulo.Precio;
 
-                string values = "values('" + codigo+ "', '" + nombre + "', '" + descripcion + "', " + idMarca + ", "
-                                    + idCategoria + ", '" + urlImagen + "', " + precio + ")";
+                string values = "values('" + codigo+ "', '" + nombre + "', '" + descripcion + "', " + idMarca.Id + ", "
+                                    + idCategoria.Id + ", '" + urlImagen + "', " + precio + ")";
                 string consulta = "insert into articulos (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) " + values;
                 datos.setearConsulta(consulta);
                 datos.ejectutarAccion();

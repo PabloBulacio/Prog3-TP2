@@ -25,3 +25,12 @@ C:\Users\Usuario\source\repos\Prog3-TP2\Negocio\obj\Debug\Negocio.csproj.CoreCom
 C:\Users\Usuario\source\repos\Prog3-TP2\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\Usuario\source\repos\Prog3-TP2\Negocio\obj\Debug\Negocio.dll
 C:\Users\Usuario\source\repos\Prog3-TP2\Negocio\obj\Debug\Negocio.pdb
+C:\Users\pabl0\source\repos\Prog3-TP2\Negocio\bin\Debug\Negocio.dll
+C:\Users\pabl0\source\repos\Prog3-TP2\Negocio\bin\Debug\Negocio.pdb
+C:\Users\pabl0\source\repos\Prog3-TP2\Negocio\bin\Debug\Dominio.dll
+C:\Users\pabl0\source\repos\Prog3-TP2\Negocio\bin\Debug\Dominio.pdb
+C:\Users\pabl0\source\repos\Prog3-TP2\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\pabl0\source\repos\Prog3-TP2\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\pabl0\source\repos\Prog3-TP2\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\pabl0\source\repos\Prog3-TP2\Negocio\obj\Debug\Negocio.dll
+C:\Users\pabl0\source\repos\Prog3-TP2\Negocio\obj\Debug\Negocio.pdb
