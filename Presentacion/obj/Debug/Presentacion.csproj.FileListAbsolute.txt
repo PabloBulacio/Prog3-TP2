@@ -47,7 +47,6 @@ C:\Users\Usuario\source\repos\Prog3-TP2\Presentacion\obj\Debug\Presentacion.cspr
 C:\Users\Usuario\source\repos\Prog3-TP2\Presentacion\obj\Debug\Presentacion.Form1.resources
 C:\Users\Usuario\source\repos\Prog3-TP2\Presentacion\obj\Debug\Presentacion.Form_Agregar.resources
 C:\Users\Usuario\source\repos\Prog3-TP2\Presentacion\obj\Debug\Presentacion.Form_Detalles.resources
-C:\Users\Usuario\source\repos\Prog3-TP2\Presentacion\obj\Debug\Presentacion.Form_Modificar.resources
 C:\Users\Usuario\source\repos\Prog3-TP2\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
 C:\Users\Usuario\source\repos\Prog3-TP2\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
 C:\Users\Usuario\source\repos\Prog3-TP2\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache

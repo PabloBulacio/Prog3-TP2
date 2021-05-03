@@ -7,36 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 
 namespace Presentacion
 {
     public partial class Form_Detalles : Form
     {
+        private Articulos Articulo = null;
+
         public Form_Detalles()
         {
             InitializeComponent();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public Form_Detalles(Articulos nuevoArticulo)
         {
-
+            InitializeComponent();
+            this.Articulo = nuevoArticulo;
+           
         }
 
         private void Form_Detalles_Load(object sender, EventArgs e)
         {
-            ///String detalles;
+            String detalles;
 
-            ///detalles = "Nombre: " + txt_Nombre.Text + "\r\n";
-            ///detalles += "Ocupacion: " + (String)(checkBox_Programador.Checked ? "Programador" : "No es Programador") + "\r\n";
-            ///detalles += "Sexo: " + (String)(radioButton_Hombre.Checked ? "Hombre" : "Mujer") + "\r\n";
+            detalles =  "Código: " + Articulo.Codigo + "\r\n";
+            detalles += "Nombre: " + Articulo.Nombre + "\r\n";
+            detalles += "Descripción: " + Articulo.Descripcion + "\r\n";
+            detalles += "Marca: " + Articulo.Marca.Descripcion + "\r\n";
+            detalles += "Categoría : " + Articulo.Categoria.Descripcion + "\r\n";
+            detalles += "Precio : $ " + Articulo.Precio + "\r\n"; 
 
-            //Vuelco la salida al TextBox Salida.
-            ///txt_Detalles.Text = detalles;
+            txt_Detalles.Text = detalles;
+            pictureBox_Detalles.Load(Articulo.ImagenUrl);
         }
 
-        private void textBox_Detalles_TextChanged(object sender, EventArgs e)
+        private void btn_Volver_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

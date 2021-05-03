@@ -42,8 +42,10 @@ namespace Presentacion
 
         private void btn_Detalles_Click(object sender, EventArgs e)
         {
-            Form_Detalles elemento = new Form_Detalles();
-            elemento.ShowDialog();
+            Articulos selectedItem = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+
+            Form_Detalles ModifyingForm = new Form_Detalles(selectedItem);
+            ModifyingForm.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -79,7 +81,7 @@ namespace Presentacion
         private void ocultarColumnas()
         {
 
-            dgvArticulos.Columns["Marca"].Visible = false;
+            dgvArticulos.Columns["IdArticulo"].Visible = false;
             dgvArticulos.Columns["Categoria"].Visible = false;
             dgvArticulos.Columns["ImagenUrl"].Visible = false;
             dgvArticulos.Columns["Descripcion"].Visible = false;
@@ -118,7 +120,7 @@ namespace Presentacion
             List<Articulos> listaFiltrada;
             if (text_Filtro.Text != "")
             {
-                listaFiltrada = listaArticulos.FindAll(buscado => buscado.Nombre.ToUpper().Contains(text_Filtro.Text.ToUpper()) || buscado.Marca.Descripcion.ToUpper().Contains(text_Filtro.Text.ToUpper()));
+                listaFiltrada = listaArticulos.FindAll(buscado => buscado.Nombre.ToUpper().Contains(text_Filtro.Text.ToUpper()) || buscado.Marca.Descripcion.ToUpper().Contains(text_Filtro.Text.ToUpper()) || buscado.Codigo.ToUpper().Contains(text_Filtro.Text.ToUpper()));
                 dgvArticulos.DataSource = null;
                 dgvArticulos.DataSource = listaFiltrada;
             }
