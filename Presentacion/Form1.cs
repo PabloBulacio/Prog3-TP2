@@ -16,6 +16,7 @@ namespace Presentacion
     public partial class Form1 : Form
     {
         private List<Articulos> listaArticulos;
+        private Articulos sinSeleccionar = null;
         
         public Form1()
         {
@@ -64,6 +65,7 @@ namespace Presentacion
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
+            Validar_btn_Detalles(sinSeleccionar);
             busqueda();
         }
 
@@ -100,13 +102,26 @@ namespace Presentacion
         */
         private void Form1_Load(object sender, EventArgs e)
         {
+            btn_Detalles.Enabled = false;
             cargarGrilla();
         }
 
         private void dgvArticulos_MouseClick(object sender, MouseEventArgs e)
         {
-            Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
-            ReloadImg(seleccionado.ImagenUrl);
+            try
+            {
+                if (dgvArticulos.SelectedRows.Count > 0) { 
+                Articulos seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+                Validar_btn_Detalles(seleccionado);
+                ReloadImg(seleccionado.ImagenUrl);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
 
         private void text_Filtro_KeyUp(object sender, KeyEventArgs e)
@@ -114,11 +129,29 @@ namespace Presentacion
             busqueda();
         }
         #endregion Eventos automaticos
-        
+
         #region Eventos custom
         /**
         * Descripcion. Funciones creadas manualmente.
         */
+        private void Validar_btn_Detalles(Articulos seleccionado)
+        {
+            //Habilita el Botón, siempre y cuando este seleccionado un articulo.
+
+            try
+            {
+                if (seleccionado != null)
+                { btn_Detalles.Enabled = true; }
+                else { btn_Detalles.Enabled = false; }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
         private void busqueda()
         {
 
