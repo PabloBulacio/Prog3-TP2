@@ -74,3 +74,7 @@ C:\Users\pabl0\source\repos\Prog3-TP2\WebApp\obj\Debug\WebApp.csproj.CoreCompile
 C:\Users\pabl0\source\repos\Prog3-TP2\WebApp\obj\Debug\WebApp.csproj.CopyComplete
 C:\Users\pabl0\source\repos\Prog3-TP2\WebApp\obj\Debug\WebApp.dll
 C:\Users\pabl0\source\repos\Prog3-TP2\WebApp\obj\Debug\WebApp.pdb
+C:\Users\pabl0\source\repos\Prog3-TP2\WebApp\bin\Dominio.dll
+C:\Users\pabl0\source\repos\Prog3-TP2\WebApp\bin\Negocio.dll
+C:\Users\pabl0\source\repos\Prog3-TP2\WebApp\bin\Dominio.pdb
+C:\Users\pabl0\source\repos\Prog3-TP2\WebApp\bin\Negocio.pdb
