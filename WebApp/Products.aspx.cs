@@ -9,7 +9,7 @@ using Dominio;
 
 namespace WebApp
 {
-    public partial class Pokemones : System.Web.UI.Page
+    public partial class Products : System.Web.UI.Page
     {
         private List<Articulos> listaArticulos;
         protected void Page_Load(object sender, EventArgs e)
@@ -22,7 +22,7 @@ namespace WebApp
                 dgvProducts.DataSource = listaArticulos;
                 dgvProducts.DataBind();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Response.Redirect("Error.aspx");
             }
