@@ -11,7 +11,7 @@ namespace WebApp
 {
     public partial class Products : System.Web.UI.Page
     {
-        private List<Articulos> listaArticulos;
+        public List<Articulos> listaArticulos;
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticulosNegocio articulosNegocio = new ArticulosNegocio();
@@ -19,13 +19,15 @@ namespace WebApp
             try
             {
                 listaArticulos = articulosNegocio.Listar();
-                dgvProducts.DataSource = listaArticulos;
-                dgvProducts.DataBind();
+
+                Session.Add("listadoArticulos", listaArticulos);
             }
             catch (Exception ex)
             {
+                Session.Add("Error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
+
         }
     }
 }
