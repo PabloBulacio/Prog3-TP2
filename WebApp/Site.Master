@@ -51,6 +51,10 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="Products">Products</a>
+                
+              </li>
+               <li class="nav-item">
+                    <a class="nav-link" href="Carrito">Carrito</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -64,7 +68,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Copyright P&P</p>
             </footer>
         </div>
 
