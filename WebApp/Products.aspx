@@ -11,10 +11,8 @@
                         <img src="<% = item.ImagenUrl %>"" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title"><%= item.Nombre %></h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="DetalleArticulo.aspx?id=<% = item.IdArticulo %>" class="btn btn-primary">Ver Detalle</a>
-                            <a href="Carrito.aspx?id=<% = item.IdArticulo %>"><i class="fas fa-heart"></i></a>
-
+                            <a href="DetalleArticulo.aspx?idArticulo=<% = item.IdArticulo %>" class="btn btn-primary">Ver Detalle</a>
+                            <a href="Carrito.aspx?idArticulo=<% = item.IdArticulo %>" class="btn btn-primary">Agregar al carrito</a>
                         </div>
                     </div>
                 </div>
